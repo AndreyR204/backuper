@@ -1,9 +1,5 @@
-import schedule
 import configparser
-
-
-def job():
-    pass
+from backuper import launcher
 
 
 def config_changer(args):
@@ -18,3 +14,8 @@ def config_changer(args):
                          'password2': password2,'time1': args.time1, 'time2': args.time2}
     with open('conf.ini', 'w') as configfile:
         config.write(configfile)
+    if args.stop:
+        launcher.process_executter(True)
+    else:
+        launcher.process_executter(True)
+        launcher.process_executter(False)
