@@ -11,7 +11,7 @@ def config_changer(args):
         password2 = input('Enter password for 2: ')
     config = configparser.ConfigParser()
     config['DEFAULT'] = {'login1': login1, 'login2': login2, 'password1': password1,
-                         'password2': password2,'time1': args.time1, 'time2': args.time2}
+                         'password2': password2,'time1': args.time1, 'time2': args.time2, 'list': args.list}
     with open('conf.ini', 'w') as configfile:
         config.write(configfile)
     if args.stop:
