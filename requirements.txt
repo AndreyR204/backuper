@@ -1,1 +1,8 @@
+ftplib
+configparser
 schedule
+os
+yadisk
+subprocess
+pathlib
+argparse

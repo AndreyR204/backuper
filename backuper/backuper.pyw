@@ -2,7 +2,7 @@ import ftplib
 import configparser
 import schedule
 import os
-import requests
+import yadisk
 
 
 def ftp_sender():
@@ -24,7 +24,11 @@ def ftp_sender():
 
 
 def two_sender():
-    pass
+    y = yadisk.YaDisk(token=config['Yandex Disk']['login2'])
+    for dir in f:
+        for file in os.listdir(dir):
+            str = "/"+ file
+            y.upload(file, str)
 
 global config
 config = configparser.ConfigParser()

@@ -14,13 +14,12 @@ def config_changer(args):
         password1 = input('Enter password for FTP: ')
         config['FTP'] = {'login1': str(login1), 'password1': str(password1), 'address1': str(address1),
                          'port1': str(port1)}
-        login2 = input('Enter login for 2: ')
-        password2 = input('Enter password for 2: ')
-        config['2'] = {'login2': str(login2), 'password2': str(password2)}
+        login2 = input('Enter token for Yandex Disk: ')
+        config['Yandex Disk'] = {'login2': str(login2)}
         config['Times'] = {'time1': input('Enter time for FTP: ')}
-        config['Times']['time2'] = input('Enter time for 2: ')
+        config['Times']['time2'] = input('Enter time for Yandex Disk: ')
         config['Lists'] = {'list1': input('Enter list for FTP: ')}
-        config['Lists']['list2'] = input('Enter list for 2: ')
+        config['Lists']['list2'] = input('Enter list for Yandex Disk: ')
         config['Process'] = {'stop': str(False)}
     else:
         if args.set1:
@@ -34,12 +33,11 @@ def config_changer(args):
             config2.read('conf.ini')
             config['FTP'] = config2['FTP']
         if args.set2:
-            login2 = input('Enter login for 2: ')
-            password2 = input('Enter password for 2: ')
-            config['2'] = {'login2': str(login2), 'password2': str(password2)}
+            login2 = input('Enter token for Yandex Disk: ')
+            config['Yandex Disk'] = {'login2': str(login2)}
         else:
             config2.read('conf.ini')
-            config['2'] = config2['2']
+            config['Yandex Disk'] = config2['Yandex Disk']
         if args.time1 != 0:
             config['Times'] = {'time1': str(args.time1)}
         else:
