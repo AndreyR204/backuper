@@ -4,10 +4,15 @@ import configparser
 
 
 def process_executter(stop):
-    proc = Popen("python backuper/backuper.pyw")
+    global proc
     if stop:
         proc.terminate()
         proc.wait()
     else:
-        proc.call()
+        try:
+            proc.terminate()
+        except NameError:
+            pass
+        proc = Popen("python backuper/backuper.pyw")
+        pid = proc.pid
 
