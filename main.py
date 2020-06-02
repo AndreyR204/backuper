@@ -10,6 +10,5 @@ parser.add_argument('--list2', '-l2', default=None, help='txt file with listed d
 parser.add_argument('--time1', '-t1', default=0, help='period of backuping in minutes')
 parser.add_argument('--time2', '-t2', default=0, help='period of backuping in minutes')
 parser.add_argument('--stop', help='stop backuping', action='store_true')
-parser.add_argument('--status', help='status of process')
 args = parser.parse_args()
 app.config_changer(args)
