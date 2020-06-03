@@ -24,11 +24,13 @@ def ftp_sender():
 
 
 def two_sender():
+    f = open(config['Lists']['list2'])
     y = yadisk.YaDisk(token=config['Yandex Disk']['login2'])
     for dir in f:
         for file in os.listdir(dir):
-            str = "/"+ file
+            str = "/" + file
             y.upload(file, str)
+
 
 global config
 config = configparser.ConfigParser()
